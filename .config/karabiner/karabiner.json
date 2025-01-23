@@ -1,0 +1,76 @@
+{
+    "profiles": [
+        {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "caps_lock_enabled",
+                                        "type": "variable_if",
+                                        "value": 0
+                                    }
+                                ],
+                                "description": "Change caps_lock to command+control+option+shift. Alt + Caps Lock toggles Caps Lock.",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": {
+                                        "mandatory": ["left_option"],
+                                        "optional": ["any"]
+                                    }
+                                },
+                                "to": [{ "key_code": "caps_lock" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "Caps Lock alone to Escape",
+                                "from": {
+                                    "key_code": "caps_lock",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "left_shift",
+                                        "modifiers": ["left_command", "left_control", "left_option"]
+                                    }
+                                ],
+                                "to_if_alone": [{ "key_code": "escape" }],
+                                "type": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "devices": [
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 33398,
+                        "vendor_id": 9306
+                    },
+                    "ignore": false
+                },
+                {
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": true,
+                        "product_id": 20616,
+                        "vendor_id": 12815
+                    },
+                    "ignore": false
+                }
+            ],
+            "name": "Default profile",
+            "selected": true,
+            "virtual_hid_keyboard": {
+                "caps_lock_delay_milliseconds": 0,
+                "keyboard_type": "ansi",
+                "keyboard_type_v2": "ansi",
+                "standalone_keys_delay_milliseconds": 200
+            }
+        }
+    ]
+}
