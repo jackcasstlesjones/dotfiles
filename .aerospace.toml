@@ -71,8 +71,8 @@ preset = 'qwerty'
 inner.horizontal = 15
 inner.vertical =   15
 outer.left =       10
-outer.bottom =     5
-outer.top =        52
+outer.bottom =     10
+outer.top = [{ monitor.main = 52 }, { monitor.secondary = 10 }, 10]
 outer.right =      10
 
 # 'main' binding mode declaration

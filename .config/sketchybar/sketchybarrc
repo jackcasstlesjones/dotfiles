@@ -32,9 +32,9 @@ sketchybar --bar position=top \
                   margin=-12 \
                   y_offset=5 \
                   corner_radius=5 \
+                  display="main"
                   # border_width=2 \
                   # border_color=0xff6D727A
-                  # display="main"
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
