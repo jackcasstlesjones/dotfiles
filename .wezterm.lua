@@ -23,6 +23,19 @@ wezterm.on('toggle-blur', function(window, pane)
   window:set_config_overrides(overrides)
 end)
 
+wezterm.on('window-focus-changed', function(window)
+  local overrides = window:get_config_overrides() or {}
+  if window:is_focused() then
+    -- Set opacity for active window
+    overrides.window_background_opacity = 0.9  -- Fully opaque when focused
+  else
+    -- Set opacity for inactive windows
+    overrides.window_background_opacity = 0.73  -- Your default opacity
+  end
+  window:set_config_overrides(overrides)
+end)
+
+
 -- wezterm.on('focus-changed', function(window, pane)
 --   local process = pane:get_foreground_process_name()
   
