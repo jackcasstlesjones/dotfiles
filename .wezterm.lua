@@ -49,10 +49,10 @@ config.keys = {
     },
 }
 
-
+config.audible_bell = 'Disabled'
 config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.1
+config.window_background_opacity = 0.73
 config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = 'NeverPrompt'
@@ -68,6 +68,7 @@ config.colors = {
   foreground = '#ffc100',
   -- The default background color
   background = '#00061b',
+-- background = '#353C4B',
 
   -- Overrides the cell background color when the current cell is occupied by the
   -- cursor and the cursor style is set to Block

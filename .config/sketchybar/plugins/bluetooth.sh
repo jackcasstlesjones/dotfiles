@@ -21,7 +21,7 @@ CONNECTED_DEVICES=$(blueutil --connected | grep -c "^.*$")
 if [ "$POWER" -eq 0 ]; then
     # Bluetooth is OFF
     echo "󰂲 Off"
-    sketchybar --set $NAME label.color=$BLACK icon.color=$BLACK
+    sketchybar --set $NAME label.color=0xff868686 icon.color=0xff868686
 elif [ "$POWER" -eq 1 ] && [ "$CONNECTED_DEVICES" -eq 0 ]; then
     # Bluetooth is ON but no devices connected
     echo "󰂯 On"

@@ -8,6 +8,7 @@ sketchybar --add item media right \
            	           icon.font="Hack Nerd Font Mono:regular:30.0" \
                        scroll_texts=on \
                        icon.color=$TEXT_COLOR   \
+                       icon.padding_left=10 \
                        background.drawing=off \
            background.border_width=2 \
            background.corner_radius=8 \
