@@ -116,10 +116,10 @@ ctrl-shift-cmd-alt-k = 'focus up'
 ctrl-shift-cmd-alt-l = 'focus right'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move
-alt-ctrl-cmd-left = 'move left'
-alt-ctrl-cmd-down = 'move down'
-alt-ctrl-cmd-up = 'move up'
-alt-ctrl-cmd-right = 'move right'
+alt-ctrl-cmd-h = 'move left'
+alt-ctrl-cmd-j = 'move down'
+alt-ctrl-cmd-k = 'move up'
+alt-ctrl-cmd-l = 'move right'
 
 ctrl-shift-cmd-alt-enter = 'fullscreen'
 
