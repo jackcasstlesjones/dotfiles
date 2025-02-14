@@ -27,10 +27,14 @@ wezterm.on('window-focus-changed', function(window)
   local overrides = window:get_config_overrides() or {}
   if window:is_focused() then
     -- Set opacity for active window
-    overrides.window_background_opacity = 0.9  -- Fully opaque when focused
+    -- overrides.window_background_opacity = 0.73  -- Fully opaque when focused
+    overrides.window_background_opacity = 0.85  -- Fully opaque when focused
+    overrides.macos_window_background_blur = 90
   else
     -- Set opacity for inactive windows
-    overrides.window_background_opacity = 0.73  -- Your default opacity
+    -- overrides.window_background_opacity = 0.4  -- Your default opacity
+    overrides.window_background_opacity = 0.5  -- Your default opacity
+    overrides.macos_window_background_blur = 50
   end
   window:set_config_overrides(overrides)
 end)
@@ -65,7 +69,7 @@ config.keys = {
 config.audible_bell = 'Disabled'
 config.font_size = 14
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.73
+-- config.window_background_opacity = 0.73
 config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = 'NeverPrompt'
@@ -80,7 +84,8 @@ config.colors = {
   -- The default text color
   foreground = '#ffc100',
   -- The default background color
-  background = '#00061b',
+  -- background = '#00061b',
+  background = '#2E3440',
 -- background = '#353C4B',
 
   -- Overrides the cell background color when the current cell is occupied by the
