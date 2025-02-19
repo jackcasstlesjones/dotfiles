@@ -31,6 +31,14 @@ return {
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
+      vim.keymap.set('n', '<leader>z', require('telescope').extensions.zoxide.list, { desc = 'Zoxide List' })
+      -- -- Add the projects extension
+      -- require('telescope').load_extension 'projects'
+      --
+      -- -- Add the projects keymap along with your other telescope keymaps
+      -- vim.keymap.set('n', '<leader>p', function()
+      --   require('telescope').extensions.projects.projects()
+      -- end, { desc = 'Open Project Picker' })
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
       -- many different aspects of Neovim, your workspace, LSP, and more!
@@ -61,7 +69,14 @@ return {
         --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
         --   },
         -- },
-        -- pickers = {}
+        pickers = {
+          buffers = {
+            ignore_current_buffer = true,
+            sort_lastused = true,
+
+            only_cwd = true, -- Only show buffers from the current working directory
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -86,7 +101,14 @@ return {
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      -- vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>k', builtin.buffers, { desc = 'Find existing buffers' })
+      vim.keymap.set('n', '<leader>/', function()
+        -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+        builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+          -- winblend = 30,
+          -- previewer = false,
+        })
+      end, { desc = '[/] Fuzzily search in current buffer' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()

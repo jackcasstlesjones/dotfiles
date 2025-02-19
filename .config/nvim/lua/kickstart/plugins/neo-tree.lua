@@ -28,20 +28,20 @@ return {
     },
     { '<leader>e', '<leader>fe', desc = 'Explorer NeoTree (Root Dir)', remap = true },
     { '<leader>E', '<leader>fE', desc = 'Explorer NeoTree (cwd)', remap = true },
-    {
-      '<leader>ge',
-      function()
-        require('neo-tree.command').execute { source = 'git_status', toggle = true }
-      end,
-      desc = 'Git Explorer',
-    },
-    {
-      '<leader>be',
-      function()
-        require('neo-tree.command').execute { source = 'buffers', toggle = true }
-      end,
-      desc = 'Buffer Explorer',
-    },
+    -- {
+    --   '<leader>ge',
+    --   function()
+    --     require('neo-tree.command').execute { source = 'git_status', toggle = true }
+    --   end,
+    --   desc = 'Git Explorer',
+    -- },
+    -- {
+    --   '<leader>be',
+    --   function()
+    --     require('neo-tree.command').execute { source = 'buffers', toggle = true }
+    --   end,
+    --   desc = 'Buffer Explorer',
+    -- },
   },
   deactivate = function()
     vim.cmd [[Neotree close]]
@@ -69,11 +69,14 @@ return {
     sources = { 'filesystem', 'buffers', 'git_status' },
     open_files_do_not_replace_types = { 'terminal', 'Trouble', 'trouble', 'qf', 'Outline' },
     filesystem = {
-      bind_to_cwd = false,
+      -- bind_to_cwd = true, -- enable this to switch neo tree to new project when using project.nvim
+      bind_to_cwd = true,
       follow_current_file = { enabled = true },
       use_libuv_file_watcher = true,
     },
     window = {
+      width = 35,
+      auto_expand_width = false,
       mappings = {
         ['l'] = 'open',
         ['h'] = 'close_node',
