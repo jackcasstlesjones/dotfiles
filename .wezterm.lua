@@ -1,7 +1,6 @@
 local wezterm = require("wezterm")
 
 local config = {}
-
 -- Disable ligatures
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 
@@ -30,7 +29,7 @@ wezterm.on("window-focus-changed", function(window)
 	if window:is_focused() then
 		-- Set opacity for active window
 		-- overrides.window_background_opacity = 0.73  -- Fully opaque when focused
-		overrides.window_background_opacity = 0.85 -- Fully opaque when focused
+		overrides.window_background_opacity = 0.9 -- Fully opaque when focused
 		overrides.macos_window_background_blur = 90
 	else
 		-- Set opacity for inactive windows
@@ -158,5 +157,6 @@ config.colors = {
 	quick_select_match_bg = { AnsiColor = "Navy" },
 	quick_select_match_fg = { Color = "#ffffff" },
 }
+-- config.color_scheme = "nordfox"
 
 return config
