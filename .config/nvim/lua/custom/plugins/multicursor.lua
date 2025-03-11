@@ -27,15 +27,15 @@ return {
       set({ 'n', 'x' }, '<leader>n', function()
         mc.matchAddCursor(1)
       end)
-      set({ 'n', 'x' }, '<leader>s', function()
-        mc.matchSkipCursor(1)
-      end)
+      -- set({ 'n', 'x' }, '<leader>s', function()
+      --   mc.matchSkipCursor(1)
+      -- end)
       set({ 'n', 'x' }, '<leader>N', function()
         mc.matchAddCursor(-1)
       end)
-      set({ 'n', 'x' }, '<leader>S', function()
-        mc.matchSkipCursor(-1)
-      end)
+      -- set({ 'n', 'x' }, '<leader>S', function()
+      --   mc.matchSkipCursor(-1)
+      -- end)
 
       -- In normal/visual mode, press `mwap` will create a cursor in every match of
       -- the word captured by `iw` (or visually selected range) inside the bigger
@@ -93,7 +93,7 @@ return {
       -- set('n', '<leader>gv', mc.restoreCursors)
 
       -- Align cursor columns.
-      set('n', '<leader>a', mc.alignCursors)
+      -- set('n', '<leader>a', mc.alignCursors)
 
       -- Split visual selections by regex.
       set('x', 'S', mc.splitCursors)

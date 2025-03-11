@@ -71,7 +71,8 @@ config.keys = {
 
 config.audible_bell = "Disabled"
 config.font_size = 15
-config.hide_tab_bar_if_only_one_tab = true
+-- config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
 -- config.window_background_opacity = 0.73
 config.macos_window_background_blur = 30
 config.window_decorations = "RESIZE"
@@ -84,7 +85,8 @@ config.colors = {
 	foreground = "#ffc100",
 	-- The default background color
 	-- background = '#00061b',
-	background = "#2E3440",
+	-- background = '#20242E',
+	background = "#2E3440", -- nord color
 	-- background = '#353C4B',
 
 	-- Overrides the cell background color when the current cell is occupied by the

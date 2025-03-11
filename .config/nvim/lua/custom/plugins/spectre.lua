@@ -1,11 +1,20 @@
 return {
   {
     'nvim-pack/nvim-spectre',
-    enabled = false,
+    enabled = true,
     dependencies = {
       'nvim-lua/plenary.nvim',
     },
     config = function()
+      require('spectre').setup {
+
+        replace_engine = {
+          ['sed'] = {
+            cmd = 'sed',
+            args = { '-i', '', '-e' }, -- Ensure proper syntax for BSD sed (macOS)
+          },
+        },
+      }
       vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
         desc = 'Toggle Spectre',
       })
