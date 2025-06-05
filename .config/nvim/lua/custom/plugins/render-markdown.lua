@@ -30,13 +30,13 @@ return {
         },
         -- Window options to use that change between rendered and raw view.
         win_options = {
-          -- @see :h 'conceallevel'
-          conceallevel = {
-            -- Used when not being rendered, get user setting.
-            default = vim.api.nvim_get_option_value('conceallevel', {}),
-            -- Used when being rendered, concealed text is completely hidden.
-            rendered = 3,
-          },
+          -- -- @see :h 'conceallevel'
+          -- conceallevel = {
+          --   -- Used when not being rendered, get user setting.
+          --   default = vim.api.nvim_get_option_value('conceallevel', {}),
+          --   -- Used when being rendered, concealed text is completely hidden.
+          --   rendered = 3,
+          -- },
           -- @see :h 'concealcursor'
           concealcursor = {
             -- Used when not being rendered, get user setting.
@@ -130,6 +130,12 @@ return {
         },
       }
       vim.api.nvim_set_hl(0, 'RenderMarkdownBullet', { fg = '#ffc100' }) -- Red color
+      vim.api.nvim_create_autocmd('FileType', {
+        pattern = 'markdown',
+        callback = function()
+          vim.api.nvim_set_hl(0, '@markup.strong', { fg = '#ebcb8b', bold = true })
+        end,
+      })
       -- vim.api.nvim_set_hl(0, 'RenderMarkdownWikiLink', { fg = '#ffc100' }) -- Red color
       local colors = {
         h1_bg = '#4C272A', -- Darkened Nord Red (original #BF616A)

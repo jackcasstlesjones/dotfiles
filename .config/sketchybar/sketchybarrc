@@ -223,22 +223,22 @@ bluetooth_audio=(
   update_freq=3
 )
 
-sketchybar --add item bluetooth_audio right \
-           --set bluetooth_audio "${bluetooth_audio[@]}" \
-                           icon.font="Hack Nerd Font Mono:regular:22.0" \
-           background.color=none \
-           --subscribe bluetooth_audio system_woke
-
-sketchybar --add item bluetooth right \
-           --set bluetooth \
-                script="~/.config/sketchybar/plugins/bluetooth.sh" \
-                update_freq=5 \
-                icon=󰂯 \
-                background.color=none \
-                icon.font="Hack Nerd Font Mono:regular:18.0" \
-                icon.padding_left=30 \
-           --subscribe bluetooth system_woke
-
+# sketchybar --add item bluetooth_audio right \
+#            --set bluetooth_audio "${bluetooth_audio[@]}" \
+#                            icon.font="Hack Nerd Font Mono:regular:22.0" \
+#            background.color=none \
+#            --subscribe bluetooth_audio system_woke
+#
+# sketchybar --add item bluetooth right \
+#            --set bluetooth \
+#                 script="~/.config/sketchybar/plugins/bluetooth.sh" \
+#                 update_freq=5 \
+#                 icon=󰂯 \
+#                 background.color=none \
+#                 icon.font="Hack Nerd Font Mono:regular:18.0" \
+#                 icon.padding_left=30 \
+#            --subscribe bluetooth system_woke
+#
 
 sketchybar --add item space_separator left \
            --set space_separator \
